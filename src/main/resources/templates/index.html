@@ -6,14 +6,38 @@
 </head>
 <body>
 
-<h2>Weather is  : </h2>
-<p th:text="${weather.description}">Description </p>
-<h2>Temperature is: </h2>
-<p th:text="${weather.temperature} + ' ° F '">Temperature </p>
-<h2>Feels Like</h2>
-<p th:text="${weather.feelsLike} + ' ° F '">Feels Like </p>
-<h2>Wind Speed is : </h2>
-<p th:text="${weather.windSpeed} + ' mph' ">Wind Speed </p>
+<!--<h2>Weather is :</h2>-->
+<!--<p th:text="${currentWeather.description}">Description </p>-->
+<!--<h2>Temperature is: </h2>-->
+<!--<p th:text="${currentWeather.temperature} + ' ° F '">Temperature </p>-->
+<!--<h2>Feels Like</h2>-->
+<!--<p th:text="${currentWeather.feelsLike} + ' ° F '">Feels Like </p>-->
+<!--<h2>Wind Speed is : </h2>-->
+<!--<p th:text="${currentWeather.windSpeed} + ' mph' ">Wind Speed </p>-->
+
+
+<div align="center" class="container parent">
+
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Description</th>
+            <th>Temperature</th>
+            <th>FEELS LIKE</th>
+            <th>WindSpeed</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="currentWeathers : ${currentWeather}">
+            <td th:text="${currentWeather.description}">Description</td>
+            <td th:text="${currentWeather.temperature}">Temperature</td>
+            <td th:text="${currentWeather.feelsLike}">Feels like</td>
+            <td th:text="${currentWeather.windSpeed}">Wind Speed</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
 </body>
 </html>
